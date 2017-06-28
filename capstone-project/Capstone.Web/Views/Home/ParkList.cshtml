@@ -1,0 +1,32 @@
+﻿@using Capstone.Web.Models;
+@using Capstone.Web.Controllers;
+@model List<ParkModel>
+
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>National Park Weather Service</h2>
+
+<section>
+
+    @foreach (ParkModel park in Model)
+    {
+        <div class="parkListing">
+            <div>
+                <a href="@Url.Action("ParkDetail", "Home", new { id = park.ParkCode })">
+                    <img src="@Url.Content("~/Content/ParkPic/" + park.ParkCode +".jpg")" />
+                </a>
+                <nav> </nav>
+            </div>
+            <div>
+                <p>@park.ParkName</p>
+                <p>@park.State</p>
+                <p>@park.ParkDescription</p>
+            </div>
+
+        </div>
+    }
+
+</section>

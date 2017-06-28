@@ -26,7 +26,7 @@ namespace Capstone.Web.DAL
                 {
                     conn.Open();
 
-                    List<ForecastModel> forecast = conn.Query<ForecastModel>(SQL_GetForecast).ToList();
+                    List<ForecastModel> forecast = conn.Query<ForecastModel>(SQL_GetForecast, new { parkCode = parkCode}).ToList();
                     return forecast;
                 }
             }

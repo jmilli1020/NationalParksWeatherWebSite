@@ -108,13 +108,34 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\other\backpack.png" />
+    <Content Include="Content\other\backpack2.jpg" />
+    <Content Include="Content\other\geek.png" />
+    <Content Include="Content\other\logo.png" />
+    <Content Include="Content\other\scenery.png" />
+    <Content Include="Content\ParkPic\cvnp.jpg" />
+    <Content Include="Content\ParkPic\enp.jpg" />
+    <Content Include="Content\ParkPic\gcnp.jpg" />
+    <Content Include="Content\ParkPic\gnp.jpg" />
+    <Content Include="Content\ParkPic\gsmnp.jpg" />
+    <Content Include="Content\ParkPic\gtnp.jpg" />
+    <Content Include="Content\ParkPic\mrnp.jpg" />
+    <Content Include="Content\ParkPic\rmnp.jpg" />
+    <Content Include="Content\ParkPic\ynp.jpg" />
+    <Content Include="Content\ParkPic\ynp2.jpg" />
+    <Content Include="Content\StyleSheet.css" />
+    <Content Include="Content\weather\cloudy.png" />
+    <Content Include="Content\weather\partlyCloudy.png" />
+    <Content Include="Content\weather\rain.png" />
+    <Content Include="Content\weather\snow.png" />
+    <Content Include="Content\weather\sunny.png" />
+    <Content Include="Content\weather\thunderstorms.png" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\ParkController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\ForecastDAL.cs" />
     <Compile Include="DAL\IForecastDAL.cs" />
@@ -128,11 +149,19 @@
     <Compile Include="Models\ForecastModel.cs" />
     <Compile Include="Models\ParkModel.cs" />
     <Compile Include="Models\SurveyModel.cs" />
+    <Compile Include="Models\SurveyViewModel.cs" />
+    <Compile Include="Models\WeatherViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\ParkList.cshtml" />
+    <Content Include="Views\Home\ParkDetail.cshtml" />
+    <Content Include="Views\Home\Survey.cshtml" />
+    <Content Include="Views\Home\FavoriteParks.cshtml" />
+    <Content Include="Views\Home\Weather.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -142,8 +171,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Home\" />
-    <Folder Include="Views\Shared\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

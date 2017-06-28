@@ -1,3 +1,5 @@
+
+
 create table park
 (
 	parkCode varchar(10) not null,

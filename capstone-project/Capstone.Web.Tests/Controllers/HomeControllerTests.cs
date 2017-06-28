@@ -16,13 +16,13 @@ namespace Capstone.Web.Controllers.Tests
         public void HomeController_IndexAction_ReturnIndexView()
         {
             //Arrange
-            HomeController controller = new HomeController();
+          //  HomeController controller = new HomeController(IForecastDAL forcastDal, IParkDAL parkDal, ISurveyDAL surveyDal);
 
             //Act
-            ViewResult result = controller.Index() as ViewResult;
+           // ViewResult result = controller.ParkList() as ViewResult;
 
             //Assert
-            Assert.AreEqual("Index", result.ViewName);
+           // Assert.AreEqual("ParkList", result.ViewName);
         }
     }
 }

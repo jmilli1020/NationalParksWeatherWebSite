@@ -1,0 +1,47 @@
+﻿@using Capstone.Web.Models;
+@using Capstone.Web.Controllers;
+@model ParkModel
+
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.ParkName</h2>
+
+<section>
+    <div class="detailListing">
+        <div
+            <a> <img src="@Url.Content("~/Content/ParkPic/" + Model.ParkCode +".jpg")" /> </a>
+        </div>
+        <div>
+            <nav  >
+                <a href="@Url.Action("Weather", "Home", new { id = Model.ParkCode })"> Check the Forcast</a>
+                <a href="@Url.Action("Survey", "Home", new { id = Model.ParkCode })"> Take our Survey...</a>
+            </nav>
+            <p>@Model.ParkName</p>
+            <p>@Model.State</p>
+            <p>@Model.AnnualVistorCount Annual Visitors</p>
+            <p>Founded in @Model.YearFounded</p>
+            <p>Daily Entrance Fee: @Model.EntryFee.ToString("C")</p>
+            <p> Come see up to @Model.NumberOfAnimalSpecies different species of animals!</p>
+            <p>@Model.ParkDescription</p>
+        </div>
+        <table>
+            <tr>
+                <td>Park Acreage</td>
+                <td>@Model.Acreage</td>
+            </tr>
+            <tr>
+                <td>Park Elevation</td>
+                <td>@Model.ElevationInFeet ft</td>
+            </tr>
+            <tr>
+                <td>Total Miles of Trails</td>
+                <td>@Model.MilesOfTrail</td>
+            </tr>
+            <tr>
+                <td>Number of Campsites</td>
+                <td>@Model.NumberOfCampsites</td>
+            </tr>
+        </table>
