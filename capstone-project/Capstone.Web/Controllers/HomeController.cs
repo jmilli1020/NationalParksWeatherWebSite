@@ -60,9 +60,25 @@ namespace Capstone.Web.Controllers
         }
 
         [HttpPost]
+        public ActionResult Survey (SurveyViewModel completedSurvey)
+        {
+            surveyDal.SaveSurvey(completedSurvey);
+            return RedirectToAction("FavoriteParks");
+        }
+
         public ActionResult FavoriteParks ()
         {
-            return View("FavoriteParks");
+            List<ParkModel> parks = parkDal.GetAllParks();
+            List<ParkModel> parksWithSurveys = new List<ParkModel>(); 
+
+            foreach (ParkModel p in parks)
+            {
+                if(surveyDal.SurveyCount(p.ParkCode) > 0 )
+                {
+                    parksWithSurveys.Add(p);
+                }
+            }
+            return View("FavoriteParks", parksWithSurveys);
         }
-    }
+   
 }

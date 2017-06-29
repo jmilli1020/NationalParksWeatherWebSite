@@ -20,6 +20,7 @@ namespace Capstone.Web.DAL
         private const string SQL_GetAllParks = "SELECT * FROM park";
         private const string SQL_GetPark = "SELECT * FROM park WHERE parkCode = @parkCode";
 
+
         public List<ParkModel> GetAllParks()
         {
             try
@@ -32,7 +33,7 @@ namespace Capstone.Web.DAL
                     return parks;
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
                 throw;
@@ -51,7 +52,7 @@ namespace Capstone.Web.DAL
                     return park;
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
                 throw;

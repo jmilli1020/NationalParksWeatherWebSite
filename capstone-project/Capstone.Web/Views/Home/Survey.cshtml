@@ -12,16 +12,26 @@
 
     <p>Here's the survey</p>
 
-    @using (Html.BeginForm("FavoritParks", "Home", FormMethod.Post))
+    @using (Html.BeginForm("Survey", "Home", FormMethod.Post))
     {
-        <div>
-            <p>
-                @Html.HiddenFor(m => m.Park.ParkName)
-                @Html.Label("EmailAddress", "Enter Your email address")
-                @Html.TextBoxFor(m => m.Survey.EmailAddress)
-            </p>
+    <div>
+        <p>
+            @Html.HiddenFor(m => m.Park.ParkName)
+            @Html.Label("EmailAddress", "Your email")
+            @Html.TextBoxFor(m => m.Survey.EmailAddress)
+        </p>
+        <p>
+            @Html.Label("State", "State of residence")
+            @Html.DropDownListFor(m => m.Survey.State, SurveyModel.States)
+        </p>
+        <p>
+            @Html.Label("Activity", "Activity Level")
+            @Html.DropDownListFor(m => m.Survey.Activity, SurveyModel.ActivityLevels)
+        </p>
 
-        </div>
+        <button>Submit</button>
+        
+    </div>
     }
 
 

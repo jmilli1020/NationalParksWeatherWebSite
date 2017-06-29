@@ -9,7 +9,7 @@ namespace Capstone.Web.DAL
 {
     public interface ISurveyDAL
     {
-        void SaveSurvey(SurveyModel survey);
+        void SaveSurvey(SurveyViewModel survey);
 
         int SurveyCount(string parkCode);
     }

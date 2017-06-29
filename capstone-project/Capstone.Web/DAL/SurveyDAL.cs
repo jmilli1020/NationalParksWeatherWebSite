@@ -22,7 +22,7 @@ namespace Capstone.Web.DAL
             "VALUES (@parkCode, @emailAddress, @state, @activity)";
         private const string SQL_GetCount = "SELECT COUNT(*) FROM survey_result WHERE parkCode = @parkCode";
 
-        public void SaveSurvey (SurveyModel survey)
+        public void SaveSurvey (SurveyViewModel survey)
         {
             try
             {
@@ -30,16 +30,16 @@ namespace Capstone.Web.DAL
                 {
                     conn.Open();
 
-                    survey.SurveryId = conn.Query<int>(SQL_SaveSurvey, new
+                   survey.Survey.SurveyId = conn.Query<int>(SQL_SaveSurvey, new
                     {
-                        parkCode = survey.ParkCode,
-                        emailAddress = survey.EmailAddress,
-                        state = survey.State,
-                        activityLevel = survey.Activity
+                        parkCode = survey.Survey.ParkCode,
+                        emailAddress = survey.Survey.EmailAddress,
+                        state = survey.Survey.State,
+                        activityLevel = survey.Survey.Activity
                     }).First();
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
                 throw;
@@ -58,7 +58,7 @@ namespace Capstone.Web.DAL
                     return count;
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 throw;
             }

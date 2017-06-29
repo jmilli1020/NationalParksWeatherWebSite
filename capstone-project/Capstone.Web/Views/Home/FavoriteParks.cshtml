@@ -1,5 +1,21 @@
-﻿@{
+﻿@using Capstone.Web.Models;
+@using Capstone.Web.Controllers;
+@model List<ParkModel>
+
+
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<section>
+    <h2> Top Parks</h2>
 
+    @foreach(ParkModel p in Model)
+    {
+       p.ParkName has 
+    }
+
+    <p> </p>
+
+   
+</section>

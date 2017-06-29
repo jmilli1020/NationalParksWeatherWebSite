@@ -30,7 +30,7 @@ namespace Capstone.Web.DAL
                     return forecast;
                 }
             }
-            catch (SqlException)
+            catch (SqlException e)
             {
 
                 throw;
