@@ -1,11 +1,108 @@
 ﻿
-header{
+body {
     width: 100%;
-    height: 150px;
+    background-color: #634F3E;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
 }
-img{
 
-    width: 100px;
-    height: auto;
+body, header, nav {
+    margin: 0px;
+}
 
+header {
+    background-color: #006600;
+    color: white;
+    padding: 25px 15px;
+}
+
+header img{
+    width: 20%;
+    position: absolute;
+}
+
+nav {
+    background-color: #8DC63F;
+    margin-bottom: 20px;
+    padding: 5px;
+    height: 125px;
+}
+
+    nav ul {
+        float: left;
+    }
+
+    nav li {
+        list-style-type: none;
+        color: white;
+        margin-left: 25px;
+        margin-bottom: 10px;
+        font-size: 1.3em;
+        float: left;
+    }
+
+        nav li a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+            nav li a:hover {
+                text-decoration: underline;
+            }
+
+section {
+    clear: both;
+    display: block;
+    width: 70%;
+    margin: 20px auto;
+    text-align: center;
+    min-height: 450px;
+    background-color: beige;
+    border-radius: 7px;
+}
+.description{
+    flex-wrap:wrap;
+    text-align:left;
+    width: 80%;
+    font-size: 24px;
+    margin-left: 50px;
+    margin-bottom: 100px;
+
+}
+.parkListing{
+    text-align: center;
+    margin-left: 100px;
+}
+    .parkListing img{
+        width: 90%;
+        text-align: center;
+    }
+h2{
+    text-align: center; 
+}
+.detailNav{
+    background-color:beige;
+
+}
+.weatherForecast{
+    display: flex;
+}
+.todayForecast{
+    display:inline;
+    width: 20%;
+}
+.weekForecast{
+    display:inline;
+    width: 80%;
+}
+.weatherImg{
+    width: 10%;
+}
+.listingText{
+    display: flex;
+    text-align: left;
+    font-size: 20px;
+}
+.info{
+    display: inline-block
 }

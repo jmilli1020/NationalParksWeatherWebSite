@@ -129,7 +129,7 @@
     <Content Include="Content\ParkPic\ynp2.jpg" />
     <Content Include="Content\StyleSheet.css" />
     <Content Include="Content\weather\cloudy.png" />
-    <Content Include="Content\weather\partlyCloudy.png" />
+    <Content Include="Content\weather\partly cloudy.png" />
     <Content Include="Content\weather\rain.png" />
     <Content Include="Content\weather\snow.png" />
     <Content Include="Content\weather\sunny.png" />
@@ -179,7 +179,6 @@
     <Content Include="Views\Home\ParkDetail.cshtml" />
     <Content Include="Views\Home\Survey.cshtml" />
     <Content Include="Views\Home\FavoriteParks.cshtml" />
-    <Content Include="Views\Home\Weather.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

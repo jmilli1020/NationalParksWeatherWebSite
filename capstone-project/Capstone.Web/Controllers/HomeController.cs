@@ -32,12 +32,6 @@ namespace Capstone.Web.Controllers
 
         public ActionResult ParkDetail(string id)
         {
-            ParkModel park = parkDal.GetPark(id);
-            return View("ParkDetail", park);
-        }
-
-        public ActionResult Weather(string id)
-        {
             List<ForecastModel> forecast = forcastDal.GetForecast(id);
             ParkModel park = parkDal.GetPark(id);
             WeatherViewModel weather = new WeatherViewModel()
@@ -45,9 +39,10 @@ namespace Capstone.Web.Controllers
                 Park = park,
                 Forecast = forecast
             };
-
-            return View("Weather", weather);
+            return View("ParkDetail", weather);
         }
+
+       
 
         public ActionResult Survey(string id)
         {
@@ -80,5 +75,7 @@ namespace Capstone.Web.Controllers
             }
             return View("FavoriteParks", parksWithSurveys);
         }
+
+      
     }
 }

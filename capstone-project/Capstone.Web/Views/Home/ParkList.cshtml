@@ -7,26 +7,25 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>National Park Weather Service</h2>
+<h1>National Park Weather Service</h1>
 
-<section>
+
 
     @foreach (ParkModel park in Model)
     {
         <div class="parkListing">
             <div>
                 <a href="@Url.Action("ParkDetail", "Home", new { id = park.ParkCode })">
-                    <img src="@Url.Content("~/Content/ParkPic/" + park.ParkCode +".jpg")" />
+                    <img class="img-responsive" src="@Url.Content("~/Content/ParkPic/" + park.ParkCode +".jpg")" />
                 </a>
-                <nav> </nav>
+              
             </div>
-            <div>
-                <p>@park.ParkName</p>
-                <p>@park.State</p>
-                <p>@park.ParkDescription</p>
+            <div class="lisitngText">
+                <h2>@park.ParkName, @park.State</h2>
+  
+                <p class="description">@park.ParkDescription</p>
             </div>
 
         </div>
     }
 
-</section>

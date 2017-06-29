@@ -2,6 +2,8 @@
 
 <html>
 <head>
+    <link rel="stylesheet" href="~/Content/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/StyleSheet.css" type="text/css" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
 </head>
@@ -9,15 +11,17 @@
 <body>
 
     <header>
-        @*<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
             <a class="logo">
-                <img src="@Url.Content("~/Content/other/logo.png")" />
+                <img class="img-responsive" src="@Url.Content("~/Content/other/logo.png")" />
             </a>
-        </nav>*@
+        </nav>
 
     </header>
-    <div>
+ 
+    <section>
         @RenderBody()
-    </div>
+    </section>
+    
 </body>
 </html>
