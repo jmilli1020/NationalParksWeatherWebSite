@@ -16,7 +16,7 @@ namespace Capstone.Web.Controllers
         private IParkDAL parkDal;
         private ISurveyDAL surveyDal;
 
-        public HomeController (IForecastDAL forcastDal, IParkDAL parkDal, ISurveyDAL surveyDal)
+        public HomeController(IForecastDAL forcastDal, IParkDAL parkDal, ISurveyDAL surveyDal)
         {
             this.forcastDal = forcastDal;
             this.parkDal = parkDal;
@@ -60,25 +60,25 @@ namespace Capstone.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Survey (SurveyViewModel completedSurvey)
+        public ActionResult Survey(SurveyViewModel completedSurvey)
         {
             surveyDal.SaveSurvey(completedSurvey);
             return RedirectToAction("FavoriteParks");
         }
 
-        public ActionResult FavoriteParks ()
+        public ActionResult FavoriteParks()
         {
             List<ParkModel> parks = parkDal.GetAllParks();
-            List<ParkModel> parksWithSurveys = new List<ParkModel>(); 
+            List<ParkModel> parksWithSurveys = new List<ParkModel>();
 
             foreach (ParkModel p in parks)
             {
-                if(surveyDal.SurveyCount(p.ParkCode) > 0 )
+                if (surveyDal.SurveyCount(p.ParkCode) > 0)
                 {
                     parksWithSurveys.Add(p);
                 }
             }
             return View("FavoriteParks", parksWithSurveys);
         }
-   
+    }
 }

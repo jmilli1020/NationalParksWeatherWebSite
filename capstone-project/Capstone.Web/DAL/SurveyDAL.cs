@@ -32,11 +32,11 @@ namespace Capstone.Web.DAL
 
                    survey.Survey.SurveyId = conn.Query<int>(SQL_SaveSurvey, new
                     {
-                        parkCode = survey.Survey.ParkCode,
+                        parkCode = survey.Park.ParkCode,
                         emailAddress = survey.Survey.EmailAddress,
                         state = survey.Survey.State,
-                        activityLevel = survey.Survey.Activity
-                    }).First();
+                        activity = survey.Survey.Activity
+                    }).FirstOrDefault();
                 }
             }
             catch (Exception e)
@@ -53,8 +53,11 @@ namespace Capstone.Web.DAL
                 using (SqlConnection conn = new SqlConnection(ConnectionString))
                 {
                     conn.Open();
-                    
-                    int count = conn.ExecuteScalar<int>(SQL_GetCount);
+
+                    int count = conn.ExecuteScalar<int>(SQL_GetCount, new
+                    {
+                        parkCode = parkCode
+                    });
                     return count;
                 }
             }
