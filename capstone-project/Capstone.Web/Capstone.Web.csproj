@@ -112,6 +112,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\HomeStyleSheet.css" />
     <Content Include="Content\other\backpack.png" />
     <Content Include="Content\other\backpack2.jpg" />
     <Content Include="Content\other\geek.png" />
@@ -180,6 +181,7 @@
     <Content Include="Views\Home\Survey.cshtml" />
     <Content Include="Views\Home\FavoriteParks.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
