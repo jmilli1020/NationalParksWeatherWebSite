@@ -26,19 +26,28 @@ nav {
     padding: 5px;
     height: 125px;
 }
+.navbar-nav{
+    float: right;
+    width: 60%;
+    margin-right: 19%;
+}
 
-    nav ul {
-        float: left;
-    }
+nav ul {
+    float: right;
+    width: 30%;
+ 
+}
 
-    nav li {
-        list-style-type: none;
-        color: white;
-        margin-left: 25px;
-        margin-bottom: 10px;
-        font-size: 1.3em;
-        float: left;
-    }
+nav li {
+    list-style-type: none;
+    color: white;
+    margin-left: 16%;
+    /*margin-left: 25px;
+   margin-bottom: 10px;*/
+    font-size: 2em;
+    float: left;
+    text-align: center;
+}
 
         nav li a {
             color: white;
@@ -49,6 +58,12 @@ nav {
             nav li a:hover {
                 text-decoration: underline;
             }
+
+.logo {
+    width: 19%;
+    text-align:right;
+
+}
 
 section {
     clear: both;
@@ -75,7 +90,9 @@ h3 {
     height: 50%;
     margin-bottom: 0px;
 }
-
+.detail-container p{
+    font-size: 18px;
+}
 /***** DETAIL LEFT SIDE(IMG-STATS) *****/
 .detail-img-stats {
     float: left;
@@ -113,8 +130,9 @@ h3 {
     float: right;
     padding: .5em;
     flex-wrap: wrap;
-    text-align: left;
-    font-size: 24px;
+    text-align: justify;
+    padding: 20px;
+
 }
 
 
@@ -141,6 +159,8 @@ h3 {
 .detail-week-forecast {
     display: block;
     width: 100%;
+    font-size: 18px;
+    font-weight: bold;
 }
 
     .detail-week-forecast tr {
@@ -148,7 +168,7 @@ h3 {
     }
 
     .detail-week-forecast td img {
-        width: 15%;
+        width: 50%;
     }
 
 
@@ -172,4 +192,15 @@ h3 {
     display: flex;
     text-align: left;
     font-size: 20px;
+}
+.description{
+    text-align: justify;
+    margin-right: 75px;
+}
+
+
+/***** Favorite Park VIEW *****/
+
+.favoriteParkImg{
+    width: 150px;
 }

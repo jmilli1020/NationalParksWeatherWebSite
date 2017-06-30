@@ -23,6 +23,12 @@ namespace Capstone.Web.Controllers
             this.surveyDal = surveyDal;
         }
 
+        public ActionResult Index()
+        {
+            List<ParkModel> parkList = parkDal.GetAllParks();
+            return View("Index", parkList);
+        }
+
         // GET: Home
         public ActionResult ParkList()
         {

@@ -13,7 +13,7 @@
     @foreach(KeyValuePair<ParkModel, int> kvp in Model)
     {
         <div>
-            <img src="@Url.Content("~/Content/ParkPic/" + kvp.Key.ParkCode + ".jpg")" />
+            <img class="favoriteParkImg"src="@Url.Content("~/Content/ParkPic/" + kvp.Key.ParkCode + ".jpg")" />
             @kvp.Key.ParkName;
             @kvp.Value;
 
