@@ -42,7 +42,18 @@ namespace Capstone.Web.Controllers
             return View("ParkDetail", weather);
         }
 
-       
+       public ActionResult ParkDetailC(string id, bool IsCelcius)
+        {
+            List<ForecastModel> forecast = forcastDal.GetForecast(id);
+            ParkModel park = parkDal.GetPark(id);
+            WeatherViewModel weather = new WeatherViewModel()
+            {
+                Park = park,
+                Forecast = forecast,
+                IsCelcius = IsCelcius
+            };
+            return View("ParkDetail", weather);
+        }
 
         public ActionResult Survey(string id)
         {

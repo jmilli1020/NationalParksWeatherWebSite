@@ -101,6 +101,7 @@ h3 {
         display: table;
         width: 100%;
     }
+
     .detail-stats-table td {
         padding-right: .1em;
         font-size: 1em;
@@ -120,30 +121,35 @@ h3 {
 /***** DETAIL WEATHER FORECAST *****/
 .detail-weather-forecast {
     width: 100%;
+    display: flex;
     height: 50%;
-    margin-top: 1em;
 }
 
 .detail-todays-forecast {
-    display: inline;
-    width: 20%;
-}
-.detail-todays-forecast img {
-    width: 15%;
+    display: block;
+    width: 100%;
 }
 
+    .detail-todays-forecast h2 {
+        margin: 0px;
+    }
+
+    .detail-todays-forecast img {
+        width: 15%;
+    }
+
 .detail-week-forecast {
-    display: inline-block;
-    width: 80%;
+    display: block;
+    width: 100%;
 }
 
     .detail-week-forecast tr {
         display: table-row;
     }
 
-.detail-week-forecast td img {
-    width: 15%;
-}
+    .detail-week-forecast td img {
+        width: 15%;
+    }
 
 
 /***** PARK LIST VIEW *****/

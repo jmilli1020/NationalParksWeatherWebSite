@@ -13,12 +13,6 @@ namespace Capstone.Web.Models
         public int High { get; set; }
         public string Forecast { get; set; }
 
-        public int ConvertCelsius(int Fahrenheit)
-        {
-            int celsius = Convert.ToInt32(Convert.ToDecimal(Fahrenheit - 32) * 0.5556m);
-            return celsius;
-        }
-
         public string Advice(string forecast)
         {
             string advice ="";

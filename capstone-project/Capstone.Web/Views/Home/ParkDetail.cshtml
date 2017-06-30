@@ -74,26 +74,46 @@
         <div class="detail-todays-forecast">
             <h2>Today's Forecast</h2>
 
+            @using (Html.BeginForm("ParkDetailC", "Home", new { id = Model.Park.ParkCode }))
+            {
+                <label>Display in Celcius</label>
+                @Html.CheckBoxFor(m => m.IsCelcius)
+                <button>Submit</button>
+            }
+            <a>
+                <img src="@Url.Content("~/Content/weather/" + @Model.Forecast[0].Forecast + ".png")" />
+            </a>
+
             <p>
-                @Model.Forecast[0].Forecast
+                Low:
+                @if (Model.IsCelcius)
+                {
+                    @Model.ConvertCelsius(@Model.Forecast[0].Low)
+                }
+                else
+                {
+                    @Model.Forecast[0].Low
+                }
+                High:
+                @if (Model.IsCelcius)
+                {
+                    @Model.ConvertCelsius(@Model.Forecast[0].High)
+                }
+                else
+                {
+                    @Model.Forecast[0].High
+                }
             </p>
 
             <p>
                 @Model.Forecast[0].Advice(Model.Forecast[0].Forecast)
             </p>
 
-            <p>
-                Low temp:@Model.Forecast[0].Low    High temp:@Model.Forecast[0].High
-            </p>
-
-            <a>
-                <img src="@Url.Content("~/Content/weather/" + @Model.Forecast[0].Forecast + ".png")" />
-            </a>
         </div>
 
         <div class="detail-week-forecast">
             <table>
-                <thead> Peek at the week ahead... </thead>
+                <thead> Four Day Forecast </thead>
                 <tbody>
                     <tr>
                         @for (int i = 1; i <= 4; i++)
@@ -108,7 +128,15 @@
                         @for (int i = 1; i <= 4; i++)
                         {
                             <td>
-                                High @Model.Forecast[i].High
+                                High:
+                                @if (Model.IsCelcius)
+                                {
+                                    @Model.ConvertCelsius(@Model.Forecast[i].High)
+                                }
+                                else
+                                {
+                                    @Model.Forecast[i].High
+                                }
                             </td>
                         }
 
@@ -118,7 +146,15 @@
                         @for (int i = 1; i <= 4; i++)
                         {
                             <td>
-                                Low @Model.Forecast[i].Low
+                                Low:
+                                @if (Model.IsCelcius)
+                                {
+                                    @Model.ConvertCelsius(@Model.Forecast[i].Low)
+                                }
+                                else
+                                {
+                                    @Model.Forecast[i].Low
+                                }
                             </td>
                         }
                     </tr>
