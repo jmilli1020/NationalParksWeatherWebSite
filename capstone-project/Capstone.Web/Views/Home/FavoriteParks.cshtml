@@ -1,6 +1,6 @@
 ﻿@using Capstone.Web.Models;
 @using Capstone.Web.Controllers;
-@model List<ParkModel>
+@model Dictionary<ParkModel, int>
 
 
 @{
@@ -10,9 +10,14 @@
 <section>
     <h2> Top Parks</h2>
 
-    @foreach(ParkModel p in Model)
+    @foreach(KeyValuePair<ParkModel, int> kvp in Model)
     {
-        <p> @p.ParkName</p>
+        <div>
+            <img src="@Url.Content("~/Content/ParkPic/" + kvp.Key.ParkCode + ".jpg")" />
+            @kvp.Key.ParkName;
+            @kvp.Value;
+
+        </div>
     }
 
     <p> </p>

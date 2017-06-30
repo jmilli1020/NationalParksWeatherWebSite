@@ -75,13 +75,14 @@ namespace Capstone.Web.Controllers
         public ActionResult FavoriteParks()
         {
             List<ParkModel> parks = parkDal.GetAllParks();
-            List<ParkModel> parksWithSurveys = new List<ParkModel>();
+            Dictionary<ParkModel, int> parksWithSurveys = new Dictionary<ParkModel, int>();
 
             foreach (ParkModel p in parks)
             {
-                if (surveyDal.SurveyCount(p.ParkCode) > 0)
+                int count = surveyDal.SurveyCount(p.ParkCode);
+                if (count > 0)
                 {
-                    parksWithSurveys.Add(p);
+                    parksWithSurveys[p] = count;
                 }
             }
             return View("FavoriteParks", parksWithSurveys);
