@@ -7,86 +7,123 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@****** HEADERS ******@
 <h2>@Model.Park.ParkName , @Model.Park.State</h2>
-<h3> Come see up to @Model.Park.NumberOfAnimalSpecies different species of animals!</h3>
 
-<div class="detailListing">
-    <div>
-        <a> <img src="@Url.Content("~/Content/ParkPic/" + Model.Park.ParkCode + ".jpg")" /> </a>
-        <a href="@Url.Action("Survey", "Home", new { id = Model.Park.ParkCode })">Take our Survey...</a>
-    </div>
+<h4>Come see up to @Model.Park.NumberOfAnimalSpecies different species of animals!</h4>
 
-    <div>
-        <div class="lisitngText">
-            <div class="info">
-                <p>@Model.Park.AnnualVistorCount Annual Visitors</p>
-                <p>Founded in @Model.Park.YearFounded</p>
-                <p>Daily Entrance Fee: @Model.Park.EntryFee.ToString("C")</p>
+<h4>
+    Love this park?
+    <a href="@Url.Action("Survey", "Home", new { id = Model.Park.ParkCode })">Take our Survey...</a>
+</h4>
 
-            </div>
-            <table class="info">
+@****** DETAILS ******@
+<section class="detail-container">
+
+    @****** DETAILS LEFT SIDE(IMAGE AND STATS)******@
+    <div class="detail-img-stats">
+
+        <div>
+            <a> <img src="@Url.Content("~/Content/ParkPic/" + Model.Park.ParkCode + ".jpg")" /> </a>
+        </div>
+
+        <div>
+            <table class="detail-stats-table">
                 <tr>
-                    <td>Park Acreage</td>
+                    <td>Park Acreage:</td>
                     <td>@Model.Park.Acreage</td>
+
+                    <td>Annual Visitors:</td>
+                    <td>@Model.Park.AnnualVistorCount</td>
                 </tr>
+
                 <tr>
-                    <td>Park Elevation</td>
+                    <td>Park Elevation:</td>
                     <td>@Model.Park.ElevationInFeet ft</td>
+
+                    <td>Founded:</td>
+                    <td>@Model.Park.YearFounded</td>
                 </tr>
+
                 <tr>
-                    <td>Total Miles of Trails</td>
+                    <td>Trail(Miles):</td>
                     <td>@Model.Park.MilesOfTrail</td>
+
+                    <td>Fee(Daily):</td>
+                    <td>@Model.Park.EntryFee.ToString("C")</td>
                 </tr>
+
                 <tr>
-                    <td>Number of Campsites</td>
+                    <td>Campsites:</td>
                     <td>@Model.Park.NumberOfCampsites</td>
                 </tr>
             </table>
         </div>
     </div>
-</div>
+
+    @****** DETAILS RIGHT SIDE(DESCRIPTION)******@
+    <p class="detail-description">
+        @Model.Park.ParkDescription
+    </p>
 
 
-<p class="description">@Model.Park.ParkDescription</p>
+    @****** WEATHER FORECAST ******@
 
-<section class="weatherForecast">
-    <div class="todayForecast">
-        <h2>Today's Forecast</h2>
-        <p>
-            @Model.Forecast[0].Forecast
-        </p>
-        <p> @Model.Forecast[0].Advice(Model.Forecast[0].Forecast)</p>
-        <p>Low temp:@Model.Forecast[0].Low    High temp:@Model.Forecast[0].High</p>
-        <a> <img src="@Url.Content("~/Content/weather/" + @Model.Forecast[0].Forecast + ".png")" /> </a>
+    <div class="detail-weather-forecast">
+
+        <div class="detail-todays-forecast">
+            <h2>Today's Forecast</h2>
+
+            <p>
+                @Model.Forecast[0].Forecast
+            </p>
+
+            <p>
+                @Model.Forecast[0].Advice(Model.Forecast[0].Forecast)
+            </p>
+
+            <p>
+                Low temp:@Model.Forecast[0].Low    High temp:@Model.Forecast[0].High
+            </p>
+
+            <a>
+                <img src="@Url.Content("~/Content/weather/" + @Model.Forecast[0].Forecast + ".png")" />
+            </a>
+        </div>
+
+        <div class="detail-week-forecast">
+            <table>
+                <thead> Peek at the week ahead... </thead>
+                <tbody>
+                    <tr>
+                        @for (int i = 1; i <= 4; i++)
+                        {
+                            <td>
+                                <img src="@Url.Content("~/Content/weather/" + @Model.Forecast[i].Forecast + ".png")" />
+                            </td>
+                        }
+                    </tr>
+
+                    <tr>
+                        @for (int i = 1; i <= 4; i++)
+                        {
+                            <td>
+                                High @Model.Forecast[i].High
+                            </td>
+                        }
+
+                    </tr>
+
+                    <tr>
+                        @for (int i = 1; i <= 4; i++)
+                        {
+                            <td>
+                                Low @Model.Forecast[i].Low
+                            </td>
+                        }
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-    <div class="weekForecast"
-        <table>
-            <thead> Peek at the week ahead... </thead>
-            <tbody>
-                <tr>
-                    @for (int i = 1; i <= 4; i++)
-                    {
-                        <td> <img class="weatherImg" src="@Url.Content("~/Content/weather/" + @Model.Forecast[i].Forecast + ".png")" /> </td>
-                    }
-
-                </tr>
-                <tr>
-                    @for (int i = 1; i <= 4; i++)
-                    {
-                        <td>
-                            High @Model.Forecast[i].High
-                        </td>
-                    }
-
-                </tr>
-                <tr>
-                    @for (int i = 1; i <= 4; i++)
-                    {
-                        <td>
-                            Low @Model.Forecast[i].Low
-                        </td>
-                    }
-                </tr>
-            </tbody>
-        </table>
 </section>
