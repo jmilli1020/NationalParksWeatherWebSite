@@ -42,7 +42,18 @@ namespace Capstone.Web.Controllers
             return View("ParkDetail", weather);
         }
 
-       
+       public ActionResult ParkDetailC(string id, bool IsCelcius)
+        {
+            List<ForecastModel> forecast = forcastDal.GetForecast(id);
+            ParkModel park = parkDal.GetPark(id);
+            WeatherViewModel weather = new WeatherViewModel()
+            {
+                Park = park,
+                Forecast = forecast,
+                IsCelcius = IsCelcius
+            };
+            return View("ParkDetail", weather);
+        }
 
         public ActionResult Survey(string id)
         {
@@ -64,13 +75,14 @@ namespace Capstone.Web.Controllers
         public ActionResult FavoriteParks()
         {
             List<ParkModel> parks = parkDal.GetAllParks();
-            List<ParkModel> parksWithSurveys = new List<ParkModel>();
+            Dictionary<ParkModel, int> parksWithSurveys = new Dictionary<ParkModel, int>();
 
             foreach (ParkModel p in parks)
             {
-                if (surveyDal.SurveyCount(p.ParkCode) > 0)
+                int count = surveyDal.SurveyCount(p.ParkCode);
+                if (count > 0)
                 {
-                    parksWithSurveys.Add(p);
+                    parksWithSurveys[p] = count;
                 }
             }
             return View("FavoriteParks", parksWithSurveys);
