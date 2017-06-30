@@ -8,7 +8,7 @@
 }
 
 <h2>@Model.Park.ParkName , @Model.Park.State</h2>
-
+<h3> Come see up to @Model.Park.NumberOfAnimalSpecies different species of animals!</h3>
 
 <div class="detailListing">
     <div
@@ -25,7 +25,7 @@
                 <p>@Model.Park.AnnualVistorCount Annual Visitors</p>
                 <p>Founded in @Model.Park.YearFounded</p>
                 <p>Daily Entrance Fee: @Model.Park.EntryFee.ToString("C")</p>
-                <p> Come see up to @Model.Park.NumberOfAnimalSpecies different species of animals!</p>
+               
             </div>
             <table class="info">
                 <tr>
@@ -47,7 +47,7 @@
             </table>
         </div>
     </div>
-   
+
 
     <p class="description">@Model.Park.ParkDescription</p>
 
@@ -64,30 +64,31 @@
         <div class="weekForecast"
         <table>
             <thead> Peek at the week ahead... </thead>
-            <tr>
-                @for (int i = 1; i <= 4; i++)
-            {
-                    <td> <img class="img-responsive weatherImg" src="@Url.Content("~/Content/weather/" + @Model.Forecast[i].Forecast + ".png")" /> </td>
-                }
+            <tbody>
+                <tr>
+                    @for (int i = 1; i <= 4; i++)
+                    {
+                        <td> <img class="weatherImg" src="@Url.Content("~/Content/weather/" + @Model.Forecast[i].Forecast + ".png")" /> </td>
+                    }
 
-            </tr>
-            <tr>
-                @for (int i = 1; i <= 4; i++)
-            {
-                    <td>
-                        High @Model.Forecast[i].High
-                    </td>
-                }
+                </tr>
+                <tr>
+                    @for (int i = 1; i <= 4; i++)
+                    {
+                        <td>
+                            High @Model.Forecast[i].High
+                        </td>
+                    }
 
-            </tr>
-            <tr>
-                @for (int i = 1; i <= 4; i++)
-                {
-                    <td>
-                        Low @Model.Forecast[i].Low
-                    </td>
-                }
-
-            </tr>
+                </tr>
+                <tr>
+                    @for (int i = 1; i <= 4; i++)
+                    {
+                        <td>
+                            Low @Model.Forecast[i].Low
+                        </td>
+                    }
+                </tr>
+            </tbody>
         </table>
     </section>

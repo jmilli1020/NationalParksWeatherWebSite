@@ -82,6 +82,7 @@ h2{
 }
 .detailNav{
     background-color:beige;
+    height: 75px;
 
 }
 .weatherForecast{
@@ -92,8 +93,11 @@ h2{
     width: 20%;
 }
 .weekForecast{
-    display:inline;
+    display:inline-block;
     width: 80%;
+}
+.weekForecast tr{
+    display: table-row;
 }
 .weatherImg{
     width: 10%;
@@ -104,5 +108,7 @@ h2{
     font-size: 20px;
 }
 .info{
-    display: inline-block
+    display: inline-block;
+    text-align: left;
+    font-size: 16px;
 }
