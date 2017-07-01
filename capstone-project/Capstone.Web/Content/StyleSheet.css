@@ -148,3 +148,16 @@ h3 {
 .favoriteParkImg {
     width: 150px;
 }
+
+/***** Index Carousel VIEW *****/
+
+div.c-wrapper {
+    width: 80%;
+    margin: auto;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 80%;
+    margin: 0 auto;
+}
