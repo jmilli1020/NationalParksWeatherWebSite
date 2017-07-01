@@ -1,68 +1,11 @@
-﻿
+﻿#logo {
+    width: 100px;
+}
+
 body {
     width: 100%;
     background-color: #634F3E;
     font-family: Calibri, 'Trebuchet MS', sans-serif;
-}
-
-body, header, nav {
-    margin: 0px;
-}
-
-header {
-    background-color: #006600;
-    color: white;
-    padding: 25px 15px;
-}
-
-    header img {
-        width: 20%;
-        position: absolute;
-    }
-
-nav {
-    background-color: #8DC63F;
-    margin-bottom: 20px;
-    padding: 5px;
-    height: 125px;
-}
-.navbar-nav{
-    float: right;
-    width: 60%;
-    margin-right: 19%;
-}
-
-nav ul {
-    float: right;
-    width: 30%;
- 
-}
-
-nav li {
-    list-style-type: none;
-    color: white;
-    margin-left: 16%;
-    /*margin-left: 25px;
-   margin-bottom: 10px;*/
-    font-size: 2em;
-    float: left;
-    text-align: center;
-}
-
-        nav li a {
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-            nav li a:hover {
-                text-decoration: underline;
-            }
-
-.logo {
-    width: 19%;
-    text-align:right;
-
 }
 
 section {
@@ -76,6 +19,31 @@ section {
     border-radius: 7px;
 }
 
+/***** PARK LIST VIEW *****/
+.park-list-container {
+    text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+    .park-list-container img {
+        width: 100%;
+    }
+
+.park-list-text {
+    font-size: 2em;
+}
+
+    .park-list-text h2 {
+        font-weight: 800;
+        background-color:;
+    }
+
+    .park-list-text p {
+        display: block;
+        text-align: justify;
+    }
+
 /***** PARK DETAIL VIEW *****/
 h2 {
     text-align: center;
@@ -87,12 +55,13 @@ h3 {
 
 .detail-container {
     width: 100%;
-    height: 50%;
+    height: inherit;
     margin-bottom: 0px;
 }
-.detail-container p{
-    font-size: 18px;
-}
+
+    .detail-container p {
+        font-size: 18px;
+    }
 /***** DETAIL LEFT SIDE(IMG-STATS) *****/
 .detail-img-stats {
     float: left;
@@ -132,7 +101,6 @@ h3 {
     flex-wrap: wrap;
     text-align: justify;
     padding: 20px;
-
 }
 
 
@@ -172,35 +140,11 @@ h3 {
     }
 
 
-/***** PARK LIST VIEW *****/
-.parkListing {
-    text-align: center;
-    margin-left: 100px;
-}
 
-    .parkListing img {
-        width: 90%;
-        text-align: center;
-    }
-
-.detailNav {
-    background-color: beige;
-    height: 75px;
-}
-
-.listingText {
-    display: flex;
-    text-align: left;
-    font-size: 20px;
-}
-.description{
-    text-align: justify;
-    margin-right: 75px;
-}
 
 
 /***** Favorite Park VIEW *****/
 
-.favoriteParkImg{
+.favoriteParkImg {
     width: 150px;
 }

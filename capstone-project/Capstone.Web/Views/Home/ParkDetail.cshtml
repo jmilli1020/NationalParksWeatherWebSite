@@ -19,149 +19,149 @@
 
 @****** DETAILS ******@
 <section class="detail-container">
+    <div>
+        @****** DETAILS LEFT SIDE(IMAGE AND STATS)******@
+        <div class="detail-img-stats">
 
-    @****** DETAILS LEFT SIDE(IMAGE AND STATS)******@
-    <div class="detail-img-stats">
+            <div>
+                <a>
+                    <img src="@Url.Content("~/Content/ParkPic/" + Model.Park.ParkCode + ".jpg")" />
+                </a>
+            </div>
 
-        <div>
-            <a>
-                <img src="@Url.Content("~/Content/ParkPic/" + Model.Park.ParkCode + ".jpg")" />
-            </a>
+            <div>
+                <table class="detail-stats-table">
+                    <tr>
+                        <td>Park Acreage:</td>
+                        <td>@Model.Park.Acreage</td>
+
+                        <td>Annual Visitors:</td>
+                        <td>@Model.Park.AnnualVistorCount</td>
+                    </tr>
+
+                    <tr>
+                        <td>Park Elevation:</td>
+                        <td>@Model.Park.ElevationInFeet ft</td>
+
+                        <td>Founded:</td>
+                        <td>@Model.Park.YearFounded</td>
+                    </tr>
+
+                    <tr>
+                        <td>Trail(Miles):</td>
+                        <td>@Model.Park.MilesOfTrail</td>
+
+                        <td>Fee(Daily):</td>
+                        <td>@Model.Park.EntryFee.ToString("C")</td>
+                    </tr>
+
+                    <tr>
+                        <td>Campsites:</td>
+                        <td>@Model.Park.NumberOfCampsites</td>
+                    </tr>
+                </table>
+            </div>
         </div>
 
-        <div>
-            <table class="detail-stats-table">
-                <tr>
-                    <td>Park Acreage:</td>
-                    <td>@Model.Park.Acreage</td>
+        @****** DETAILS RIGHT SIDE(DESCRIPTION)******@
+        <p class="detail-description">
+            @Model.Park.ParkDescription
+        </p>
+    </div>
+</section>
 
-                    <td>Annual Visitors:</td>
-                    <td>@Model.Park.AnnualVistorCount</td>
-                </tr>
 
-                <tr>
-                    <td>Park Elevation:</td>
-                    <td>@Model.Park.ElevationInFeet ft</td>
+@****** WEATHER FORECAST ******@
+<section class="detail-weather-forecast">
 
-                    <td>Founded:</td>
-                    <td>@Model.Park.YearFounded</td>
-                </tr>
+    <div class="detail-todays-forecast">
+        <h2>Today's Forecast</h2>
 
-                <tr>
-                    <td>Trail(Miles):</td>
-                    <td>@Model.Park.MilesOfTrail</td>
+        @using (Html.BeginForm("ParkDetailC", "Home", new { id = Model.Park.ParkCode }))
+            {
+            <label>Display in Celcius</label>
+            @Html.CheckBoxFor(m => m.IsCelcius)
+            <button>Submit</button>
+        }
+        <a>
+            <img src="@Url.Content("~/Content/weather/" + @Model.Forecast[0].Forecast + ".png")" />
+        </a>
 
-                    <td>Fee(Daily):</td>
-                    <td>@Model.Park.EntryFee.ToString("C")</td>
-                </tr>
+        <p>
+            Low:
+            @if (Model.IsCelcius)
+            {
+                @Model.ConvertCelsius(@Model.Forecast[0].Low)
+            }
+            else
+            {
+                @Model.Forecast[0].Low
+            }
+            High:
+            @if (Model.IsCelcius)
+            {
+                @Model.ConvertCelsius(@Model.Forecast[0].High)
+            }
+            else
+            {
+                @Model.Forecast[0].High
+            }
+        </p>
 
-                <tr>
-                    <td>Campsites:</td>
-                    <td>@Model.Park.NumberOfCampsites</td>
-                </tr>
-            </table>
-        </div>
+        <p>
+            @Model.Forecast[0].Advice(Model.Forecast[0].Forecast)
+        </p>
+
     </div>
 
-    @****** DETAILS RIGHT SIDE(DESCRIPTION)******@
-    <p class="detail-description">
-        @Model.Park.ParkDescription
-    </p>
+    <div class="detail-week-forecast">
+        <table>
+            <thead> Four Day Forecast </thead>
+            <tbody>
+                <tr>
+                    @for (int i = 1; i <= 4; i++)
+                    {
+                        <td>
+                            <img src="@Url.Content("~/Content/weather/" + @Model.Forecast[i].Forecast + ".png")" />
+                        </td>
+                    }
+                </tr>
 
+                <tr>
+                    @for (int i = 1; i <= 4; i++)
+                    {
+                        <td>
+                            High:
+                            @if (Model.IsCelcius)
+                            {
+                                @Model.ConvertCelsius(@Model.Forecast[i].High)
+                            }
+                            else
+                            {
+                                @Model.Forecast[i].High
+                            }
+                        </td>
+                    }
 
-    @****** WEATHER FORECAST ******@
+                </tr>
 
-    <div class="detail-weather-forecast">
-
-        <div class="detail-todays-forecast">
-            <h2>Today's Forecast</h2>
-
-            @using (Html.BeginForm("ParkDetailC", "Home", new { id = Model.Park.ParkCode }))
-            {
-                <label>Display in Celcius</label>
-                @Html.CheckBoxFor(m => m.IsCelcius)
-                <button>Submit</button>
-            }
-            <a>
-                <img src="@Url.Content("~/Content/weather/" + @Model.Forecast[0].Forecast + ".png")" />
-            </a>
-
-            <p>
-                Low:
-                @if (Model.IsCelcius)
-                {
-                    @Model.ConvertCelsius(@Model.Forecast[0].Low)
-                }
-                else
-                {
-                    @Model.Forecast[0].Low
-                }
-                High:
-                @if (Model.IsCelcius)
-                {
-                    @Model.ConvertCelsius(@Model.Forecast[0].High)
-                }
-                else
-                {
-                    @Model.Forecast[0].High
-                }
-            </p>
-
-            <p>
-                @Model.Forecast[0].Advice(Model.Forecast[0].Forecast)
-            </p>
-
-        </div>
-
-        <div class="detail-week-forecast">
-            <table>
-                <thead> Four Day Forecast </thead>
-                <tbody>
-                    <tr>
-                        @for (int i = 1; i <= 4; i++)
-                        {
-                            <td>
-                                <img src="@Url.Content("~/Content/weather/" + @Model.Forecast[i].Forecast + ".png")" />
-                            </td>
-                        }
-                    </tr>
-
-                    <tr>
-                        @for (int i = 1; i <= 4; i++)
-                        {
-                            <td>
-                                High:
-                                @if (Model.IsCelcius)
-                                {
-                                    @Model.ConvertCelsius(@Model.Forecast[i].High)
-                                }
-                                else
-                                {
-                                    @Model.Forecast[i].High
-                                }
-                            </td>
-                        }
-
-                    </tr>
-
-                    <tr>
-                        @for (int i = 1; i <= 4; i++)
-                        {
-                            <td>
-                                Low:
-                                @if (Model.IsCelcius)
-                                {
-                                    @Model.ConvertCelsius(@Model.Forecast[i].Low)
-                                }
-                                else
-                                {
-                                    @Model.Forecast[i].Low
-                                }
-                            </td>
-                        }
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                <tr>
+                    @for (int i = 1; i <= 4; i++)
+                    {
+                        <td>
+                            Low:
+                            @if (Model.IsCelcius)
+                            {
+                                @Model.ConvertCelsius(@Model.Forecast[i].Low)
+                            }
+                            else
+                            {
+                                @Model.Forecast[i].Low
+                            }
+                        </td>
+                    }
+                </tr>
+            </tbody>
+        </table>
     </div>
 </section>

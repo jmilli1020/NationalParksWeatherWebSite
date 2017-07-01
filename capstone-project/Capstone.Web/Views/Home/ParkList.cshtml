@@ -9,23 +9,24 @@
 
 <h1>National Park Weather Service</h1>
 
+@foreach (ParkModel park in Model)
+{
+    <div class="park-list-container">
 
-
-    @foreach (ParkModel park in Model)
-    {
-        <div class="parkListing">
-            <div>
-                <a href="@Url.Action("ParkDetail", "Home", new { id = park.ParkCode })">
-                    <img class="img-responsive" src="@Url.Content("~/Content/ParkPic/" + park.ParkCode +".jpg")" />
-                </a>
-              
-            </div>
-            <div class="lisitngText">
-                <h2>@park.ParkName, @park.State</h2>
-  
-                <p class="description">@park.ParkDescription</p>
-            </div>
-
+        <div>
+            <a href="@Url.Action("ParkDetail", "Home", new { id = park.ParkCode })">
+                <img class="img-responsive" src="@Url.Content("~/Content/ParkPic/" + park.ParkCode +".jpg")" />
+            </a>
         </div>
-    }
+
+        <div class="park-list-text">
+
+            <h2>@park.ParkName, @park.State</h2>
+
+            <p>
+                @park.ParkDescription
+            </p>
+        </div>
+    </div>
+}
 

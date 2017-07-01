@@ -11,38 +11,31 @@
 <body>
 
     <header>
-       
-
-
-            <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-           
-                @*<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>*@
-               
-                <div class="navbar" id="navbarSupportedContent">
-                    <div class="logo">
-                        <a> <img class="img-responsive" src="@Url.Content("~/Content/other/logo.png")" /> </a>
-                    </div>
-                    <ul class="navbar-nav">
-                        <li class="nav">
-                            <a class="nav-link" href="@Url.Action("Index", "Home")">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav">
-                            <a class="nav-link" href="@Url.Action("FavoriteParks", "Home")">Survey Results</a>
-                        </li>
-                        <li class="nav">
-                            <a class="nav-link disabled" href="@Url.Action("ParkList", "Home")">List of parks</a>
-                        </li>
-                    </ul>
-                   
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand">
+                        <img id="logo" src="~/Content/other/logo.png" />
+                    </a>
                 </div>
-             
-                    </nav>
 
-
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="@Url.Action("Index", "Home")">Home<span class="sr-only">(current)</span></a></li>
+                        <li><a href="@Url.Action("ParkList", "Home")">Parks</a></li>
+                        <li><a href="@Url.Action("FavoriteParks", "Home")">Park Surveys</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
- 
+
     <section>
         @RenderBody()
     </section>
