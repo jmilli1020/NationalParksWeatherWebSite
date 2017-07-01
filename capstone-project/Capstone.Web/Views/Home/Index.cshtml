@@ -7,14 +7,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<head>
-    <meta charset="utf-8" />
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="Content/bootstrap-social.css" rel="stylesheet" />
-    <link href="Content/StyleSheetCarousel.css" rel="stylesheet" />
-
-</head>
-
 <body>
     <div class="c-wrapper">
         <div id="myCarousel" class="carousel slide">
@@ -34,9 +26,9 @@
             <div class="carousel-inner">
                 <div class="item active">
                     <img src="@Url.Content("~/Content/ParkPic/cvnp.jpg")" alt="Park1" class="img-responsive" />
-                    <div class="carousel-caption">
-                        <h1>@Model[0].InspirationQuote</h1>
-                        <h3>@Model[0].InspirationQuoteSource</h3>
+                    <div class="carousel-caption" id="quotes">
+                        <p1>@Model[0].InspirationalQuote</p1>
+                        <p1>@Model[0].InspirationalQuoteSource</p1>
                     </div>
                 </div>
 
@@ -45,22 +37,24 @@
                     <div class="item">
                         <img class="d-block img-fluid" src="@Url.Content("~/Content/ParkPic/" + Model[i].ParkCode + ".jpg")" alt=@Model[i].ParkName slide">
                         <div class="carousel-caption">
-                            <h1>@Model[i].InspirationQuote</h1>
-                            <p>@Model[i].InspirationQuoteSource</p>
+                            <p1>@Model[i].InspirationalQuote</p1>
+                            <p1>@Model[i].InspirationalQuoteSource</p1>
                         </div>
                     </div>
                 }
- 
-            <a class="carousel-control left" href="#myCarousel" data-slide="prev">
-                <span class="icon-prev"></span>
-            </a>
-            <a class="carousel-control right" href="#myCarousel" data-slide="next">
-                <span class="icon-next"></span>
-            </a>
+
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                    <span class="icon-prev"></span>
+                </a>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                    <span class="icon-next"></span>
+                </a>
+            </div>
         </div>
     </div>
     <script src="Scripts/jquery-1.9.1.min.js"></script>
     <script src="Scripts/bootstrap.js"></script>
+ 
 </body>
 
 
