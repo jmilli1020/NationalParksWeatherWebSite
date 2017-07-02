@@ -4,7 +4,7 @@
 
 
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_IndexLayout.cshtml";
 }
 
 <body>
@@ -28,17 +28,19 @@
                     <img src="@Url.Content("~/Content/ParkPic/cvnp.jpg")" alt="Park1" class="img-responsive" />
                     <div class="carousel-caption" id="quotes">
                         <p1>@Model[0].InspirationalQuote</p1>
-                        <p1>@Model[0].InspirationalQuoteSource</p1>
+                        <br />
+                        <p1>- @Model[0].InspirationalQuoteSource</p1>
                     </div>
                 </div>
 
                 @for (int i = 1; i < Model.Count; i++)
                 {
                     <div class="item">
-                        <img class="d-block img-fluid" src="@Url.Content("~/Content/ParkPic/" + Model[i].ParkCode + ".jpg")" alt=@Model[i].ParkName slide">
+                        <img class="d-block img-responsive" src="@Url.Content("~/Content/ParkPic/" + Model[i].ParkCode + ".jpg")" alt=@Model[i].ParkName slide">
                         <div class="carousel-caption">
                             <p1>@Model[i].InspirationalQuote</p1>
-                            <p1>@Model[i].InspirationalQuoteSource</p1>
+                            <br />
+                            <p2>- @Model[i].InspirationalQuoteSource</p2>
                         </div>
                     </div>
                 }

@@ -13,10 +13,9 @@ section {
     margin: 20px auto;
     text-align: center;
     height: auto;
-    background-color: beige;
+    background-color: #B3EFB2;
     border-radius: 7px;
 }
-
 
 /**** NAVBAR ****/
 #logo {
@@ -108,16 +107,49 @@ section {
     }
 }
 
-/***** LAYOUT ****/
-.c-wrapper {
-    padding-top: 2em;
-    padding-bottom: 2em;
+/***** INDEX LAYOUT ****/
+
+#index-navbar {
+    margin-bottom: 5px;
+}
+#index-layout-fullscreen {
+    height: 100%;
+    overflow: hidden;
+}
+.index-layout-section {
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
 }
 
-/***** INDEX VIEW *****/
-#quotes p {
-    z-index: 1;
+
+/***** Index Carousel VIEW *****/
+.carousel-inner div img {
+    margin: 0 auto;
+    width: 90%;
+    height: 100%;
 }
+.c-wrapper {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    
+}
+.c-wrapper div {
+    height: 100%;
+}
+
+#quotes  {
+
+}
+.carousel-indicators {
+    margin-bottom: 4em;
+}
+
 
 
 /***** PARK LIST VIEW *****/
@@ -137,7 +169,6 @@ section {
 
     .park-list-text h2 {
         font-weight: 800;
-        background-color:;
     }
 
     .park-list-text p {
@@ -248,17 +279,4 @@ h3 {
 
 .favoriteParkImg {
     width: 150px;
-}
-
-/***** Index Carousel VIEW *****/
-
-div.c-wrapper {
-    width: 80%;
-    margin: auto;
-}
-
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-    width: 80%;
-    margin: 0 auto;
 }
