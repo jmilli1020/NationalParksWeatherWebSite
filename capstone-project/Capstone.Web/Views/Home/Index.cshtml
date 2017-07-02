@@ -29,7 +29,7 @@
                     <div class="carousel-caption" id="quotes">
                         <p1>@Model[0].InspirationalQuote</p1>
                         <br />
-                        <p1>- @Model[0].InspirationalQuoteSource</p1>
+                        <p2>- @Model[0].InspirationalQuoteSource</p2>
                     </div>
                 </div>
 
@@ -37,7 +37,7 @@
                 {
                     <div class="item">
                         <img class="d-block img-responsive" src="@Url.Content("~/Content/ParkPic/" + Model[i].ParkCode + ".jpg")" alt=@Model[i].ParkName slide">
-                        <div class="carousel-caption">
+                        <div class="carousel-caption" id="quotes">
                             <p1>@Model[i].InspirationalQuote</p1>
                             <br />
                             <p2>- @Model[i].InspirationalQuoteSource</p2>
