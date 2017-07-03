@@ -20,8 +20,9 @@
         </div>
 
         <div class="park-list-text">
-
-            <h2>@park.ParkName, @park.State</h2>
+            <a href="@Url.Action("ParkDetail", "Home", new { id = park.ParkCode })">
+                <h2>@park.ParkName, @park.State</h2>
+            </a>
 
             <p>
                 @park.ParkDescription

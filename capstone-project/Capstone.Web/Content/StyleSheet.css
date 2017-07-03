@@ -113,7 +113,7 @@ section {
     margin-bottom: 0px;
 }
 #index-layout-fullscreen {
-    height: 100%;
+    height: 97%;
     overflow: hidden;
 }
 .index-layout-section {
@@ -122,23 +122,39 @@ section {
     margin-top: 0px;
     margin-bottom: 0px;
     width: 100%;
-    height: 100%;
+    height: 90%;
     border-radius: 0px;
     background-color: #0E402D;
 }
 
 
 /***** Index Carousel VIEW *****/
+#myCarousel {
+    height: 90%;
+}
+.c-wrapper div {
+    margin-top: 3%;
+    height: 100%;
+}
 .carousel-inner div img {
     margin: 0 auto;
-    width: 90%;
-    height: 100%;
+    width: 95%;
+    max-height: 95%;
     border-radius: 10px;
+    border: solid 1px;
+    border-color: black;
+}
+.carousel-inner {
+    border: solid 4px;
+    border-radius: 10px;
+    border-color: black;
+    background-color: #104547;
 }
 .c-wrapper {
     width: 90%;
     height: 100%;
     margin: 0 auto;
+
 }
 .c-wrapper .item {
     height: 100%;
@@ -146,39 +162,34 @@ section {
 }
 
 #quotes {
-    margin-bottom: 35%;
-    padding: 1em;
     border: solid 0.1em;
     border-color: #564D4A;
     background: rgba(280,280,280,.25);
     border-radius: 5px;
+    height: auto;
+    margin-bottom: 22%;
 }
     #quotes p1 {
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        font-size: 1.75em;
-        color: #EB5E28;
+        font-size: 1.5em;
+        color: #2F2F2F;
     }
     #quotes p2 {
         font-style: italic;
-        color: #EB5E28;
-        font-size: 1.25em;
+        color: #2F2F2F;
+        font-size: 125%;
     }
-
-.carousel-indicators {
-    margin-bottom: 10em;
-}
-
-
 
 /***** PARK LIST VIEW *****/
 .park-list-container {
     text-align: center;
-    margin-left: 15%;
+    margin-left: 1.25em;
     margin-right: 15%;
 }
 
     .park-list-container img {
         width: 100%;
+        border-radius: 5px;
     }
 
 .park-list-text {
