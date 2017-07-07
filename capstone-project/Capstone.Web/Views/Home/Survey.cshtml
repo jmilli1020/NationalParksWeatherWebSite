@@ -6,11 +6,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Survey!</h2>
+<h2>Take Our Park Review</h2>
 
-
-    <p>Here's the survey</p>
-
+<div id="survey-form">
     @using (Html.BeginForm("Survey", "Home", FormMethod.Post))
     {
         <div>
@@ -32,4 +30,5 @@
 
         </div>
     }
+</div>
 

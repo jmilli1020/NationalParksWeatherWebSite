@@ -7,20 +7,23 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<section>
-    <h2> Top Parks</h2>
+    <h2>Most Reviewed Parks</h2>
 
-    @foreach(KeyValuePair<ParkModel, int> kvp in Model)
+    @foreach (KeyValuePair<ParkModel, int> kvp in Model)
     {
-        <div>
-            <img class="favoriteParkImg"src="@Url.Content("~/Content/ParkPic/" + kvp.Key.ParkCode + ".jpg")" />
-            @kvp.Key.ParkName;
-            @kvp.Value;
-
+        <div class="favorite-park-tiles">
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="@Url.Content("~/Content/ParkPic/" + kvp.Key.ParkCode + ".jpg")">
+                        <div class="caption">
+                            <h3>@kvp.Key.ParkName</h3>
+                            <p>Total Surveys: @kvp.Value</p>
+                            <p><a href="@Url.Action("ParkDetail", "Home", new { id = kvp.Key.ParkCode })" class="btn btn-primary" role="button">Check Out The Details</a>
+                            <a href="@Url.Action("Survey", "Home", new { id = kvp.Key.ParkCode })" class="btn btn-primary" role="button">Leave A Review</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     }
-
-    <p> </p>
-
-   
-</section>
