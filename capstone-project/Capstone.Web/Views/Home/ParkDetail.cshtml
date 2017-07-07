@@ -36,7 +36,7 @@
                         <td>@Model.Park.Acreage</td>
 
                         <td>Annual Visitors:</td>
-                        <td>@Model.Park.AnnualVistorCount</td>
+                        <td>@Model.Park.AnnualVisitorCount</td>
                     </tr>
 
                     <tr>
@@ -87,26 +87,37 @@
             <img src="@Url.Content("~/Content/weather/" + @Model.Forecast[0].Forecast + ".png")" />
         </a>
 
-        <p>
-            Low:
+        <div id="temps">
+
             @if (Model.IsCelcius)
             {
-                @Model.ConvertCelsius(@Model.Forecast[0].Low)
+                <p>
+                    Low: @Model.ConvertCelsius(@Model.Forecast[0].Low) C
+                </p>
             }
             else
             {
-                @Model.Forecast[0].Low
+                <p>
+                    Low: @Model.Forecast[0].Low F
+                </p>
+
             }
-            High:
             @if (Model.IsCelcius)
             {
-                @Model.ConvertCelsius(@Model.Forecast[0].High)
+                <p>
+                    High: @Model.ConvertCelsius(@Model.Forecast[0].High) C
+                </p>
+
             }
             else
             {
-                @Model.Forecast[0].High
+                <p>
+                    High: @Model.Forecast[0].High F
+                </p>
+
             }
-        </p>
+
+        </div>
 
         <p>
             @Model.Forecast[0].Advice(Model.Forecast[0].Forecast)
@@ -130,36 +141,38 @@
                 <tr>
                     @for (int i = 1; i <= 4; i++)
                     {
-                        <td>
-                            High:
-                            @if (Model.IsCelcius)
-                            {
-                                @Model.ConvertCelsius(@Model.Forecast[i].High)
-                            }
-                            else
-                            {
-                                @Model.Forecast[i].High
-                            }
-                        </td>
+                        if (Model.IsCelcius)
+                        {
+                            <td>
+                                High: @Model.ConvertCelsius(@Model.Forecast[i].High) C
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                                High: @Model.Forecast[i].High F
+                            </td>
+                        }
                     }
-
                 </tr>
 
                 <tr>
                     @for (int i = 1; i <= 4; i++)
                     {
-                        <td>
-                            Low:
-                            @if (Model.IsCelcius)
-                            {
-                                @Model.ConvertCelsius(@Model.Forecast[i].Low)
-                            }
-                            else
-                            {
-                                @Model.Forecast[i].Low
-                            }
-                        </td>
+                        if (Model.IsCelcius)
+                        {
+                            <td>
+                                Low: @Model.ConvertCelsius(@Model.Forecast[i].Low) C
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                                Low: @Model.Forecast[i].Low F
+                            </td>
+                        }
                     }
+
                 </tr>
             </tbody>
         </table>
