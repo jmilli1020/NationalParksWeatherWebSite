@@ -157,6 +157,8 @@ section {
     width: 90%;
     height: 100%;
     margin: 0 auto;
+    padding-bottom: 1.2em;
+    padding-top: .1em;
 }
 
     .c-wrapper .item {
@@ -369,5 +371,5 @@ section .favorite-park-tiles {
     }
 
 #survey-form {
-    margin-bottom: 2%;
+    padding-bottom: 2%;
 }
