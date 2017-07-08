@@ -355,6 +355,9 @@ h4 {
     height: 100%;
     margin: .5%;
 }
+#detail-picture-summary-tile div {
+    width: 100%;
+}
 
 #detail-weather-tile {
     display: inline-flex;
@@ -362,6 +365,9 @@ h4 {
     min-width: 300px;
     height: 100%;
     margin: 0%;
+}
+#detail-weather-tile div {
+    width: 100%;
 }
 
 /***** Favorite Park VIEW *****/
