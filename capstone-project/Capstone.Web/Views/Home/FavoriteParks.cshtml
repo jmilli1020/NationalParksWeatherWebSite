@@ -11,19 +11,17 @@
 
     @foreach (KeyValuePair<ParkModel, int> kvp in Model)
     {
-        <div class="favorite-park-tiles">
-            <div class="row">
-                <div class="col-sm-6 col-md-4">
+            <div class="row" id="favorite-tile-container">
+                <div class="col-sm-6 col-md-4" id="favorite-tile">
                     <div class="thumbnail">
                         <img src="@Url.Content("~/Content/ParkPic/" + kvp.Key.ParkCode + ".jpg")">
                         <div class="caption">
                             <h3>@kvp.Key.ParkName</h3>
                             <p>Total Surveys: @kvp.Value</p>
-                            <p><a href="@Url.Action("ParkDetail", "Home", new { id = kvp.Key.ParkCode })" class="btn btn-primary" role="button">Check Out The Details</a>
-                            <a href="@Url.Action("Survey", "Home", new { id = kvp.Key.ParkCode })" class="btn btn-primary" role="button">Leave A Review</a></p>
+                            <p><a href="@Url.Action("ParkDetail", "Home", new { id = kvp.Key.ParkCode })" class="btn btn-primary" id= "checkout-button" role="button">Check Out The Details</a>
+                            <a href="@Url.Action("Survey", "Home", new { id = kvp.Key.ParkCode })" class="btn btn-primary" id="review-button" role="button">Leave A Review</a></p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     }
