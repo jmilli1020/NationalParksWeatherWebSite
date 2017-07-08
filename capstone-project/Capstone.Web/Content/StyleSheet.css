@@ -129,11 +129,12 @@ section {
 
 /***** Index Carousel VIEW *****/
 #myCarousel {
-    height: 90%;
+    height: 100%;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 .c-wrapper div {
-    margin-top: 3%;
     height: 100%;
 }
 
@@ -154,15 +155,14 @@ section {
 }
 
 .c-wrapper {
-    width: 90%;
+    width: 95%;
     height: 100%;
     margin: 0 auto;
-    padding-bottom: 1.2em;
-    padding-top: .1em;
 }
 
     .c-wrapper .item {
         height: 100%;
+        margin-bottom: 1em;
         margin-top: 1em;
     }
 
@@ -172,7 +172,8 @@ section {
     background: rgba(280,280,280,.25);
     border-radius: 5px;
     height: auto;
-    margin-bottom: 15%;
+    margin-top: 15%;
+    margin-bottom: 10%;
 }
 
     #quotes p1 {
@@ -202,7 +203,7 @@ section {
     }
 
 .park-list-text {
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
     .park-list-text h2 {
@@ -228,6 +229,7 @@ h4 {
 }
 
 .detail-container {
+    /*display: flex;*/
     width: 100%;
     height: inherit;
     margin-bottom: 0px;
@@ -260,6 +262,7 @@ h4 {
     width: 100%;
     text-align: left;
     font-size: 16px;
+    border-collapse: collapse;
 }
 
     .detail-stats-table tbody {
@@ -267,10 +270,16 @@ h4 {
         width: 100%;
     }
 
+    .detail-stats-table tr {
+        display: flex;
+        align-items: stretch;
+    }
+
     .detail-stats-table td {
-        padding-right: .1em;
-        padding-left: .1em;
+        flex: 1;
+        display: inline-block;
         font-size: 1em;
+        width: 1%;
     }
 
 .detail-description {
@@ -342,6 +351,7 @@ h4 {
 #detail-picture-summary-tile {
     display: inline-flex;
     width: 45%;
+    min-width: 300px;
     height: 100%;
     margin: .5%;
 }
@@ -349,6 +359,7 @@ h4 {
 #detail-weather-tile {
     display: inline-flex;
     width: 45%;
+    min-width: 300px;
     height: 100%;
     margin: 0%;
 }
