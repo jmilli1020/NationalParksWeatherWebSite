@@ -229,7 +229,6 @@ h4 {
 }
 
 .detail-container {
-    /*display: flex;*/
     width: 100%;
     height: inherit;
     margin-bottom: 0px;
@@ -270,17 +269,17 @@ h4 {
         width: 100%;
     }
 
-    .detail-stats-table tr {
+    /*.detail-stats-table tr {
         display: flex;
         align-items: stretch;
-    }
+    }*/
 
-    .detail-stats-table td {
+    /*.detail-stats-table td {
         flex: 1;
         display: inline-block;
         font-size: 1em;
         width: 1%;
-    }
+    }*/
 
 .detail-description {
     width: 100%;

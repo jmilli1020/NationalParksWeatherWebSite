@@ -19,7 +19,7 @@
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
                 <img src="@Url.Content("~/Content/ParkPic/" + Model.Park.ParkCode + ".jpg")">
-                <div class="caption" id="detail-caption-description">
+                <div class="caption" id="detail-left-caption">
                     <p class="detail-description">
                         @Model.Park.ParkDescription
                     </p>
@@ -37,8 +37,6 @@
                 <div class="caption" id="detail-right-caption">
                     <h3>Today's Forecast</h3>
                     <div class="detail-todays-forecast">
-
-
                         <a>
                             <img src="@Url.Content("~/Content/weather/" + @Model.Forecast[0].Forecast + ".png")" />
                         </a>
